@@ -146,7 +146,10 @@ def processwhere():
 
      if(len(identifierList)==5):
          conditional_query=str(identifierList[4].replace(" ",""))
-         conditional_query=conditional_query.split("where")[1]
+         if "where" in conditional_query: 
+            conditional_query=conditional_query.split("where")[1]
+         if "WHERE" in conditional_query: 
+            conditional_query=conditional_query.split("WHERE")[1]
          andop=0
          orop=0
          where_condition=""
